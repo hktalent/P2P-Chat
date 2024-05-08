@@ -14,16 +14,11 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
+
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
           go-version: 1.21.4
-      - name: Install Dependences
-        run: |
-          brew install libpcap
-#          git submodule update --init --recursive --remote
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v5
         with:
@@ -40,8 +35,6 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
@@ -68,8 +61,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
+
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
