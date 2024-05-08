@@ -1,0 +1,21 @@
+env:
+  - GO111MODULE=on
+
+project_name: P2P_Chat
+builds:
+  - id: P2P_Chat-linux
+    ldflags:
+      - -s -w
+    binary: P2P_Chat
+    env:
+      - CGO_ENABLED=1
+    main: main.go
+    goos:
+      - linux
+    goarch:
+      - amd64
+archives:
+  - format: zip
+
+checksum:
+  name_template: "{{ .ProjectName }}-linux-checksums.txt"
