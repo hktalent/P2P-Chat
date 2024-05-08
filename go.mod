@@ -1,4 +1,4 @@
-module webview-example
+module P2P-Chat
 
 go 1.13
 
